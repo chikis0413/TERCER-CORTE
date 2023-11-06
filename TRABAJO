@@ -2,30 +2,30 @@
 #include <string.h>
 
 typedef struct {
-    char nombre[50];
-    int notas[5];
+    char nombre[100];
+    int notas[3];
 } Estudiante;
 
 void cNotas(Estudiante estudiante) {
     printf("Notas de %s:\n", estudiante.nombre);
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
         printf("Nota %d: %d\n", i + 1, estudiante.notas[i]);
     }
 }
 
 float cPromedio(Estudiante estudiante) {
     int suma = 0;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
         suma += estudiante.notas[i];
     }
-    return (float)suma / 5.0;
+    return (float)suma / 3.0;
 }
 
 int main() {
     Estudiante estudiantes[3] = {
-        {"Juan Torres", {50, 35, 48, 32, 38}},
-        {"Camila Ruiz", {25, 38, 40, 41, 24}},
-        {"Gabriel Soto", {45, 32, 50, 44, 37}}
+        {"Juan Torres", {50, 35, 48}},
+        {"Camila Ruiz", {25, 38, 40}},
+        {"Gabriel Soto", {45, 32, 50}}
     };
 
     int opcion, idEstudiante;
